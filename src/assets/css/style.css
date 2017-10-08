@@ -104,7 +104,7 @@ h3{font-family: 'Roboto', sans-serif;}
     content: "\f07a"; position: absolute; z-index: -2; font-size: 26px;}
     .bottom_header.fixed-header .menu_sec .login_part li a i::before,.inner-header .bottom_header .menu_sec .login_part li a i::before{color: #666;}
 .bottom_header .menu_sec .nav.navbar-nav {padding-top: 20px;padding-right: 50px;}
-.menu_sec .login_part {display: inline-block;vertical-align: top; position: relative;  padding: 12px 0 35px; min-width: 50px;}
+.menu_sec .login_part {display: inline-block;vertical-align: top; position: relative;  padding: 12px 0; min-width: 50px;}
 .menu_sec .login_part .cartdropdown{ position: absolute; right: 0; top:60px; margin: 0;  width: 230px; display: none; background: #fff;}
 .menu_sec .login_part:hover .cartdropdown{ display: block; }
 .menu_sec .login_part .cartdropdown .checkout-btn{ display: inline-block; }
@@ -265,7 +265,7 @@ transition-property: color;}
 .special_sec h1{margin-bottom:50px;position:relative; padding-bottom: 40px;}
 .special_sec h1::after{border-bottom:2px solid #f2f2f2;bottom:15px;content:"";left:50%;margin-left:-100px;position:absolute;width:200px}
 .special_sec .trees{background:#ffffff none repeat scroll 0 0;padding:0 10px;position:relative;z-index:9}
-.special_sec li{border-right:1px solid #ededed;padding:0 5px; width: 16.66%; display: inline-block; vertical-align: top; margin: 0 -2px 20px;}
+.special_sec li{/*border-right:1px solid #ededed;*/padding:0 5px; width: 16.66%; display: inline-block; vertical-align: top; margin: 0 -2px 20px;}
 .special_sec li img{ max-width: 100%;}
 .special_sec li:nth-child(6), .special_sec li:nth-child(12), .special_sec li:nth-child(18), .special_sec li:nth-child(24){border:0 none;padding-right:0}
 .special_sec li:nth-child(1){padding-left:0}
@@ -1123,6 +1123,7 @@ button.close:hover{ opacity: 1; }
   text-align: center;
   margin: 0 0 20px;
 }
+#forgotModal h3{margin: 0 0 15px 0;}
 #signinModal .form-control {
   border-radius: 0; -webkit-border-radius: 0;
   height: 40px; font-size: 16px;
@@ -1134,7 +1135,7 @@ button.close:hover{ opacity: 1; }
   margin: 0 0 5px;
   font-weight: 400;
 }
-#signinModal .modal-body button {
+#signinModal .modal-body button,#forgotModal  .modal-body button{
   background: #ff4141;
   color: #fff;
   height: 45px;

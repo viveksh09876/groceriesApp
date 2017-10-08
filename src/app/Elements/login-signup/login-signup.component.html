@@ -38,14 +38,14 @@
 <!--- forgot password model -->
 
 <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <h3>Forgot Password</h3>
             <form [formGroup]="forgotForm" (ngSubmit)="forgotPass(forgotForm.value)" novalidate>
               <div class="form-group">
@@ -118,13 +118,14 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-md-6 col-sm-6">
+                    <label>Address</label>
+                    <input formControlName="address" id="address" type="text" class="form-control" placeholder="Address">
+                  </div>
+                  <div class="col-md-6 col-sm-6">
                     <label>Apartment</label>
                     <input formControlName="apartment" type="text" class="form-control" placeholder="Apartment">
                   </div>
-                  <div class="col-md-6 col-sm-6">
-                    <label>Address</label>
-                    <input formControlName="address" type="text" class="form-control" placeholder="Address">
-                  </div>
+                  
                 </div>
               </div>
               <div class="form-group">

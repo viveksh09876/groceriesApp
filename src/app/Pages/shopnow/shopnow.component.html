@@ -135,9 +135,9 @@
           <div class="order-box pnl-group-fix" role="tablist">
             <span class="halfcircle"><i class="fa fa-align-justify"></i> <i class="fa fa-close"></i></span>
             <div class="ipadview">
-              <p>Your Current Order: <span>0</span> ( 0 Products )</p>
+              <p>Your Current Order: <span>${{itemSubTotal | number : '1.2-2'}}</span> ( {{cartProduct.length}} Products )</p>
             </div>
-            <div class="desktop-view">
+            <div class="desktop-view mobile-open">
               <h3 class="text-center">Your Order</h3>
               <div class="heightscroll">
               <table class="table">
@@ -180,10 +180,10 @@
         <div *ngIf="cartProduct.length > 0" class="order-box pnl-group-fix" role="tablist" aria-multiselectable="true">
           <span class="halfcircle"><i class="fa fa-align-justify"></i></span>
           <div class="ipadview">
-            <p>Your Current Order: <span>${{itemSubTotal | number : '1.2-2'}}</span>{{products.length}} Products</p>
-            <a href="#" data-toggle="modal" data-target="#postcode_pop">Checkout <i class="fa fa-mail-forward"></i></a>
+            <p>Your Current Order: <span>${{itemSubTotal | number : '1.2-2'}}</span> ( {{cartProduct.length}} Products )</p>
+            <a routerLink="/cart" *ngIf="itemSubTotal > 40" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a>
           </div>
-          <div class="desktop-view">
+          <div class="desktop-view mobile-open">
             <h3 class="text-center">Your Order</h3>
             <div class="heightscroll">
             <table class="table">

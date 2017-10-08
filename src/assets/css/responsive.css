@@ -631,7 +631,7 @@
 	
 	.customer-details-banner{ min-height: 200px; }
 	.order-bar{ margin-bottom: 10px;}
-	.order-bar ul{ font-weight: 400; display: flex; border: 1px solid #c6c3c4; font-size: 13px; white-space: nowrap; overflow: auto;}
+	.order-bar ul{ font-weight: 400; display: none; border: 1px solid #c6c3c4; font-size: 13px; white-space: nowrap; overflow: auto;}
 	.order-bar ul li{ float: none; flex: 1 0 0;  width: auto; display: inline-block; margin: 0 -2px;}
 	.order-bar ul li a{ padding: 0 10px;}
 

@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ApiPath: 'http://www.binaryfrog.co/web/api/',
+  ApiPath: 'http://www.binaryfrog.co/web/api/'
 };

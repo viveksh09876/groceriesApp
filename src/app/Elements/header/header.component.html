@@ -15,7 +15,7 @@
                     <ul class="login_part">
                         <li *ngIf="authUser.length == 0"><a href="javscript:void(0)" data-toggle="modal" data-target="#signinModal"><i class="fa fa-sign-in"></i>Login</a></li>
                         <!-- <li *ngIf="authUser.length != 0"><a routerLink="/dashboard"><span class="glyphicon glyphicon-user"></span> My Account</a></li> -->
-                        <li *ngIf="authUser.length != 0"><a href="javascript:void(0)" (click)="signout()">Logout</a></li>
+                        <li *ngIf="authUser.length != 0"><a href="javascript:void(0)" (click)="signout()"><i class="fa fa-sign-out"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>

@@ -53,13 +53,17 @@
           var sticky = jQuery('.cart-sidebar'),
               scroll = jQuery(window).scrollTop();
 
-          if (scroll >= 100) sticky.addClass('fixed');
-          else sticky.removeClass('fixed');
+          if (scroll >= 100) {
+            sticky.addClass('fixed');
+          }
+          else {
+            sticky.removeClass('fixed');
+          }
         });
 
-        $('.halfcircle').click(function(){
-          $(this).toggleClass('close-btn');
-          $('.halfcircle ~ .desktop-view').slideToggle();
+        jQuery('.halfcircle').click(function(){
+          jQuery(this).toggleClass('close-btn');
+          jQuery('.mobile-open').slideToggle();
         })
       }
     });
