@@ -57,6 +57,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
        // self.onScrollLoad();
       }
     });
+    
   }
   ngDoCheck() {
     this.AddAmounts();

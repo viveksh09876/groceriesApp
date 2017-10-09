@@ -105,7 +105,15 @@ h3{font-family: 'Roboto', sans-serif;}
     .bottom_header.fixed-header .menu_sec .login_part li a i::before,.inner-header .bottom_header .menu_sec .login_part li a i::before{color: #666;}
 .bottom_header .menu_sec .nav.navbar-nav {padding-top: 20px;padding-right: 50px;}
 .menu_sec .login_part {display: inline-block;vertical-align: top; position: relative;  padding: 12px 0; min-width: 50px;}
-.menu_sec .login_part .cartdropdown{ position: absolute; right: 0; top:60px; margin: 0;  width: 230px; display: none; background: #fff;}
+.menu_sec .login_part .cartdropdown{     position: absolute;
+    right: 0;
+    top: 46px;
+    margin: 0;
+    width: 230px;
+    display: none;
+    z-index: -1;
+    background: #fff;
+    box-shadow: 0 0 5px #ccc;}
 .menu_sec .login_part:hover .cartdropdown{ display: block; }
 .menu_sec .login_part .cartdropdown .checkout-btn{ display: inline-block; }
 

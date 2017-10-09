@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { FlashMessagesService } from 'angular2-flash-messages';
 declare var $: any;
+declare var google: any;
+
 @Component({
   selector: 'app-login-signup',
   templateUrl: './login-signup.component.html',
@@ -24,6 +26,15 @@ export class LoginSignupComponent implements OnInit {
   }
   ngOnInit() {
     this.authService.currentAuth.subscribe((u) => this.authUser = u);
+     const addEnput = document.getElementById('address');
+      var options = {
+        componentRestrictions: {country: "au"}
+       };
+       const addAuto = new google.maps.places.Autocomplete(addEnput, options);
+       addAuto.addListener('place_changed', () => {
+         this.signupForm['controls']['address'].setValue(addAuto.getPlace().formatted_address);
+         this.signupForm['controls']['delv_address'].setValue(addAuto.getPlace().formatted_address);
+       });
   }
   customVal(Ac: AbstractControl) {
     var pass = Ac.get('pass').value;
