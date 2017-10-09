@@ -15,7 +15,7 @@
         <div class="form-group">
           <label class="col-md-5 col-lg-4 control-label">Password</label>
           <div class="col-md-7 col-lg-8">
-            <input formControlName="password" type="password" class="form-control">
+            <input formControlName="pass" type="password" class="form-control">
           </div>
         </div>
       </div>
@@ -30,51 +30,36 @@
       <div class="col-md-12 col-sm-12">
         <h3>New Customer</h3>
       </div>
-      <!-- <div class="col-md-6 col-sm-6">
+      <div class="col-md-12 col-sm-6">
         <div class="form-group">
-          <label class="col-md-5 col-lg-4 control-label">Customer Type</label>
-          <div class="col-md-7 col-lg-8">
-            <select class="form-control">
-                <option>Corporate</option>
-                <option>Corporate1</option>
-                <option>Corporate1</option>
-                <option>Corporate1</option>
+          <label class="col-md-3 col-lg-2 control-label">Customer Type</label>
+          <div class="col-md-10 col-lg-10">
+            <select formControlName="customer_type" class="form-control">
+                <option value="">Select Customer Type</option>
+                <option value="1">Residential</option>
+                <option value="2">School</option>
+                <option value="3">Child Care</option>
+                <option value="4">Corporate</option>
             </select>
-          </div>
-        </div>
-      </div> -->
-      <div class="col-md-12 col-sm-12">
-        <div class="form-group full">
-          <label class="col-md-2 control-label">First Name</label>
-          <div class="col-md-10">
-            <input formControlName="name" type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12">
-        <div class="form-group full">
-          <label class="col-md-2 control-label">Last Name</label>
-          <div class="col-md-10">
-            <input formControlName="lastName" type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-      <!-- <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <label class="col-md-5 col-lg-4 control-label">First Name</label>
-          <div class="col-md-7 col-lg-8">
-            <input type="text" class="form-control">
           </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-          <label class="col-md-5 col-lg-4 control-label">Last Name</label>
+        <div class="form-group full">
+          <label class="col-md-5 col-lg-4 control-label">First Name</label>
           <div class="col-md-7 col-lg-8">
-            <input type="text" class="form-control">
+            <input formControlName="name" type="text" class="form-control">
           </div>
         </div>
-      </div> -->
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group full">
+          <label class="col-md-5 col-lg-4 control-label">Last Name</label>
+          <div class="col-md-7 col-lg-8">
+            <input formControlName="lastName" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
       <div class="col-md-6 col-sm-6">
         <div class="form-group">
           <label class="col-md-5 col-lg-4 control-label">Phone Number</label>

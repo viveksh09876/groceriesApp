@@ -14,6 +14,8 @@
   <link type="text/css" rel="stylesheet" href="assets/css/animations.css">
   <link type="text/css" rel="stylesheet" href="assets/css/jquery.bxslider.css">
   <link type="text/css" rel="stylesheet" href="assets/css/tymp.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/jquery-ui-1.10.1.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/calender-customer.css">
   <style>
     .flash-messages {
     position: fixed;
@@ -51,25 +53,6 @@
         jQuery('.bottom_header').removeClass('fixed-header');
         }
       });
-
-      if(jQuery(window).width() < 991){
-        jQuery(window).scroll(function(){
-          var sticky = jQuery('.cart-sidebar'),
-              scroll = jQuery(window).scrollTop();
-
-          if (scroll >= 100) {
-            sticky.addClass('fixed');
-          }
-          else {
-            sticky.removeClass('fixed');
-          }
-        });
-
-        jQuery('.halfcircle').click(function(){
-          jQuery(this).toggleClass('close-btn');
-          jQuery('.mobile-open').slideToggle();
-        })
-      }
     });
     </script>
 </body>

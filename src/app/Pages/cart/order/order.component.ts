@@ -60,9 +60,10 @@ export class OrderComponent implements OnInit, AfterViewChecked {
   createForms() {
     this.orderLoginform = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      pass: ['', Validators.required]
     });
     this.signupForm = this.fb.group({
+	  customer_type: ['', Validators.required],
       name: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
@@ -76,37 +77,35 @@ export class OrderComponent implements OnInit, AfterViewChecked {
     }, { validator: this.customVal});
   }
   doLogin(values) {
-    // safisafi@gmail.com&pass=123456
-    this.authService.doLogin(values).map((res: Response) => {
-      return res.json();
-    }).subscribe((data) => {
-      if(data) {
-        this.authUser[0] = data[0]['id'];
-        localStorage.setItem('user', data[0]['id']);
-        this.router.navigate(['/cart/your-details']);
-        this._flashMessagesService.show('Your are login successfully continue with your cart!', { cssClass: 'alert-success', timeout: 2000 });
-      } else if(data == 0) {
-        this._flashMessagesService.show('Your paswword not match Failure!', { cssClass: 'alert-danger', timeout: 2000 });
-      } else {
-        this._flashMessagesService.show('Login Failure!', { cssClass: 'alert-danger', timeout: 2000 });
-      }
-    });
-  }
+this.authService.doLogin(values).subscribe(data => {
+if(data[0].status) {
+this.authUser[0] = data[0]['id'];
+localStorage.setItem('user', data[0]['id']);
+this.router.navigate(['/cart/your-details']);
+this._flashMessagesService.show('Your are login successfully continue with your cart!', { cssClass: 'alert-success', timeout: 2000 });
+} else {
+this._flashMessagesService.show('Login Failure!', { cssClass: 'alert-danger', timeout: 2000 });
+}
+});
+}
   signup(values) {
     console.log(values);
-    this.getListService.Postlist('http://www.binaryfrog.co/web/api/register_user.php', values)
-    .map((res: Response) => {
-      return res.json();
-    }).subscribe((data) => {
-      console.log(data);
-      if(data[0]) {
-        localStorage.setItem('user', data[0].id);
-        this._flashMessagesService.show('Your are register successfully!', { cssClass: 'alert-success', timeout: 2000 });
-        this.router.navigate(['/cart/your-details']);
+    let loginData = {
+      email:values.email,
+      pass:values.pass
+    }
+    this.authService.signUp(values).subscribe(data => {
+      if(data[0].status=='Deactive') {
+        this.authService.doLogin(loginData).subscribe(ldata => {
+          localStorage.setItem('user', ldata[0].id);
+          this._flashMessagesService.show('Your are register successfully!', { cssClass: 'alert-success', timeout: 2000 });
+          this.router.navigate(['/cart/your-details']);
+        });
       } else {
         this._flashMessagesService.show('Register Failure!', { cssClass: 'alert-danger', timeout: 2000 });
       }
     });
+
 
     // this.authService.signUp(values).map((res: Response) => {
     //   return res.json();

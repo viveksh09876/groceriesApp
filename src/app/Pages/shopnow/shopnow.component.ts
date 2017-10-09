@@ -56,6 +56,24 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
       if(scrolT > wiH) {
        // self.onScrollLoad();
       }
+    
+    if($(window).width() < 991){
+        $(window).scroll(function(){
+          var sticky = $('.cart-sidebar'),
+              scroll = $(window).scrollTop();
+          if (scroll >= 100) {
+            sticky.addClass('fixed');
+          }
+          else {
+            sticky.removeClass('fixed');
+          }
+        });
+        $('.halfcircle').click(function(){
+          $(this).toggleClass('close-btn');
+          $('.mobile-open').slideToggle();
+        })
+      }
+    
     });
     
   }

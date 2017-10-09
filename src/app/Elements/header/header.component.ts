@@ -21,6 +21,15 @@ export class HeaderComponent implements OnInit, DoCheck {
     if (storageUser != null && storageUser != '') {
       this.authUser[0] = storageUser;
     }
+
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > 150) {
+        $('.bottom_header').addClass('fixed-header');
+        }
+        else {
+        $('.bottom_header').removeClass('fixed-header');
+        }
+      });
   }
   ngDoCheck() {
     this.itemSubTotal = 0;
@@ -37,6 +46,4 @@ export class HeaderComponent implements OnInit, DoCheck {
     this.auth.signout();
     this.router.navigate(['/']);
   }
-
-
 }

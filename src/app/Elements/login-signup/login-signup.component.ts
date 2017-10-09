@@ -12,7 +12,6 @@ declare var google: any;
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent implements OnInit {
-
   authUser: any[] = [];
   loginForm: FormGroup;
   forgotForm: FormGroup;
@@ -58,6 +57,7 @@ export class LoginSignupComponent implements OnInit {
       email: ['', Validators.required]
     });
     this.signupForm = this.fb.group({
+	  customer_type: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
@@ -68,7 +68,7 @@ export class LoginSignupComponent implements OnInit {
       address: '',
       delv_address: '',
       delv_address_apartment: '',
-    }, { Validator: this.customVal});
+    }, { validator: this.customVal});
   }
 
   doLogin(values) {
@@ -103,7 +103,6 @@ export class LoginSignupComponent implements OnInit {
       email:values.email,
       pass:values.pass
     }
-
     this.authService.signUp(values).subscribe(data => {
       if(data[0].status=='Deactive') {
         this.authService.doLogin(loginData).subscribe(ldata => {

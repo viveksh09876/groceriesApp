@@ -58,7 +58,7 @@
                           </nav>
                           <span class="login_part">
                                <li *ngIf="products.length > 0"><a routerLink="/cart"><i class="fa fa-shoping-cart">{{products.length}}</i>${{itemSubTotal | number : '1.2-2'}}</a>
-                                                                 <div class="cartdropdown order-box">
+                                                                 <!-- <div class="cartdropdown order-box">
                                   <h3 class="text-center">Your Order</h3>
                                   <table class="table">
                                     <tr>
@@ -85,7 +85,7 @@
                                     </tr>
                                     <tr>
                                       <td colspan="4">
-                                        <strong *ngIf="loc">Post Code:</strong> {{loc}} <!--<a href="javascript:void(0)">(Change)</a>-->
+                                        <strong *ngIf="loc">Post Code:</strong> {{loc}} <a href="javascript:void(0)">(Change)</a>
                                       </td>
                                     </tr>
                                     <tr>
@@ -96,10 +96,10 @@
                                   </table>
                                   
                                   <div class="text-center">
-                                    <a href="javascript:void(0)" class="checkout-btn hoverd-btn keepshop"> Checkout</a>
+                                    <a _ngcontent-c6="" class="checkout-btn hoverd-btn" routerlink="/cart" href="#/cart">CHECKOUT</a>
                                     
                                   </div>
-                                </div>
+                                </div> -->
                                </li>
                                <li *ngIf="products.length <= 0">
                                   <a routerLink="/shopnow"><i class="fa fa-shoping-cart">0</i></a>

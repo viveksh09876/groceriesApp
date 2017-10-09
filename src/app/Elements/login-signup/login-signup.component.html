@@ -77,6 +77,18 @@
           <div role="tabpanel" class="tab-pane active" id="personel">
             <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)">
               <div class="row">
+<div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <label>Customer Type</label>     
+                      <select formControlName="customer_type" class="form-control">
+                          <option value="">Select Customer Type</option>
+                          <option value="1">Residential</option>
+                          <option value="2">School</option>
+                          <option value="3">Child Care</option>
+                          <option value="4">Corporate</option>
+                      </select>
+                    </div>
+                  </div>
                 <div class="col-md-6 col-sm-6">
                   <div class="form-group">
                     <label>First Name</label>
